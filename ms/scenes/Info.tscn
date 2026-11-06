@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8qxdsp6ac2ty"]
+
+[ext_resource type="Script" uid="uid://baegb302jr4fb" path="res://scripts/info.gd" id="1_jfmby"]
+[ext_resource type="VideoStream" uid="uid://su14qr6imrd7" path="res://assets/C.ogv" id="2_e34te"]
+[ext_resource type="FontFile" uid="uid://cq1hche236dpd" path="res://assets/fonts/PixelOperator8.ttf" id="2_o8i12"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jfmby")
+
+[node name="Panel" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("2_e34te")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Label" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.059000004
+anchor_top = 0.268
+anchor_right = 0.93500006
+anchor_bottom = 0.75000006
+offset_left = 0.47999573
+offset_top = 0.039993286
+offset_right = 0.19995117
+offset_bottom = -6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_o8i12")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1

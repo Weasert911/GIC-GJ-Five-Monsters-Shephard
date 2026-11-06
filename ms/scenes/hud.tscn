@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://c77aidtoyxcud"]
+
+[ext_resource type="Script" uid="uid://glpbbvpsygb5" path="res://scripts/hud.gd" id="1_047uy"]
+[ext_resource type="Script" uid="uid://caxnctm5bapx3" path="res://scenes/control.gd" id="2_0m4u7"]
+[ext_resource type="PackedScene" uid="uid://c3xcdtaojhuqk" path="res://scenes/horns/bh.tscn" id="2_5pdws"]
+[ext_resource type="Material" uid="uid://xbhc3ecs0d5d" path="res://shaders/v.tres" id="2_mphia"]
+[ext_resource type="PackedScene" uid="uid://dvaxjbr3takwc" path="res://scenes/horns/gh.tscn" id="3_hd3ao"]
+[ext_resource type="PackedScene" uid="uid://io7u7th2nyd2" path="res://scenes/horns/ph.tscn" id="4_0i1j5"]
+[ext_resource type="PackedScene" uid="uid://yx3k60kgbr7x" path="res://scenes/horns/oh.tscn" id="5_mphia"]
+[ext_resource type="PackedScene" uid="uid://bk6fql3urbj83" path="res://scenes/horns/rh.tscn" id="6_0m4u7"]
+[ext_resource type="FontFile" uid="uid://cq1hche236dpd" path="res://assets/fonts/PixelOperator8.ttf" id="7_5pdws"]
+[ext_resource type="FontFile" uid="uid://b1yt366jhwb5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_0i1j5"]
+[ext_resource type="Texture2D" uid="uid://vxy6nanuf6ac" path="res://assets/heart pixel art 32x32.png" id="8_hd3ao"]
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_047uy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_0m4u7")
+
+[node name="BoxContainer" type="BoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="HornBrown" parent="Control/BoxContainer" instance=ExtResource("2_5pdws")]
+visible = false
+position = Vector2(45, 45)
+scale = Vector2(2, 2)
+
+[node name="HornGreen" parent="Control/BoxContainer" instance=ExtResource("3_hd3ao")]
+visible = false
+position = Vector2(45, 45)
+scale = Vector2(2, 2)
+
+[node name="HornPurple" parent="Control/BoxContainer" instance=ExtResource("4_0i1j5")]
+visible = false
+position = Vector2(45, 45)
+scale = Vector2(2, 2)
+
+[node name="HornOrange" parent="Control/BoxContainer" instance=ExtResource("5_mphia")]
+visible = false
+position = Vector2(45, 45)
+scale = Vector2(2, 2)
+
+[node name="HornRed" parent="Control/BoxContainer" instance=ExtResource("6_0m4u7")]
+visible = false
+position = Vector2(45, 45)
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="Control"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 0
+offset_left = 102.0
+offset_right = 602.0
+offset_bottom = 100.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("7_5pdws")
+theme_override_font_sizes/font_size = 32
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Control"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 50.0
+offset_right = 770.0
+offset_bottom = 150.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("7_5pdws")
+theme_override_font_sizes/font_size = 32
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Control"]
+visible = false
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("8_0i1j5")
+theme_override_font_sizes/font_size = 64
+text = "You Died!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+top_level = true
+material = ExtResource("2_mphia")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 80.0
+offset_right = 206.0
+offset_bottom = 120.0
+scale = Vector2(1.5, 1.5)
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_hd3ao")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_hd3ao")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_hd3ao")
+stretch_mode = 2

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://mpnwwkcytc3v"]
+
+[ext_resource type="Script" uid="uid://cu3mser0r80jg" path="res://scripts/deadzone.gd" id="1_t3cga"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_t3cga"]
+b = Vector2(1000000, 0)
+
+[node name="Node2D" type="Area2D" groups=["deadzone"]]
+script = ExtResource("1_t3cga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_t3cga")

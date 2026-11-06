@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg1uc2amf5kqx"]
+
+[ext_resource type="Script" uid="uid://dr7v4hs44jhdp" path="res://scripts/StatsScreen.gd" id="1_r7pmv"]
+[ext_resource type="FontFile" uid="uid://cq1hche236dpd" path="res://assets/fonts/PixelOperator8.ttf" id="2_hhson"]
+[ext_resource type="Shader" uid="uid://1g3uep4ltrb7" path="res://shaders/light.gdshader" id="3_op61s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75xkh"]
+shader = ExtResource("3_op61s")
+shader_parameter/desaturate = 1.0
+shader_parameter/vignette_strength = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_r7pmv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_75xkh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 100)
+anchors_preset = -1
+anchor_left = 0.305
+anchor_top = 0.268
+anchor_right = 0.69500005
+anchor_bottom = 0.75000006
+offset_left = -0.4000244
+offset_top = 0.039993286
+offset_right = 0.39990234
+offset_bottom = -6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_hhson")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

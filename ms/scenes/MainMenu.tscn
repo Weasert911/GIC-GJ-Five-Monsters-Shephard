@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhquf3bkatqh7"]
+
+[ext_resource type="Script" uid="uid://n734yw1ngs34" path="res://scripts/main_menu.gd" id="1_l72w3"]
+[ext_resource type="VideoStream" uid="uid://su14qr6imrd7" path="res://assets/C.ogv" id="1_yqorp"]
+[ext_resource type="FontFile" uid="uid://b1yt366jhwb5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_l72w3"]
+[ext_resource type="Shader" uid="uid://ds3n2nk43mabc" path="res://shaders/fg.gdshader" id="3_ow34m"]
+[ext_resource type="Texture2D" uid="uid://djog1bylmuthk" path="res://assets/button UI.png" id="4_l72w3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_826wr"]
+atlas = ExtResource("4_l72w3")
+region = Rect2(112, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow34m"]
+atlas = ExtResource("4_l72w3")
+region = Rect2(160, 160, 16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_826wr"]
+shader = ExtResource("3_ow34m")
+shader_parameter/thickness = 0.00999999977648
+shader_parameter/frame_color = Color(0.21890712, 0.3600799, 0.4487608, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_l72w3")
+
+[node name="BGVideo" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("1_yqorp")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.393
+anchor_top = 0.5
+anchor_right = 0.61200005
+anchor_bottom = 0.86100006
+offset_left = -42.039978
+offset_top = -39.0
+offset_right = -282.36
+offset_bottom = -246.92004
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+
+[node name="Play" type="Button" parent="Buttons"]
+layout_mode = 2
+icon = SubResource("AtlasTexture_826wr")
+icon_alignment = 1
+
+[node name="Exit" type="Button" parent="Buttons"]
+layout_mode = 2
+icon = SubResource("AtlasTexture_ow34m")
+icon_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18400002
+anchor_top = 0.085
+anchor_right = 0.80500007
+anchor_bottom = 0.38700002
+offset_left = 15.47998
+offset_top = -17.2
+offset_right = 16.599854
+offset_bottom = -4.6400146
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_l72w3")
+theme_override_font_sizes/font_size = 64
+text = "Shephard Of Monsters"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+top_level = true
+material = SubResource("ShaderMaterial_826wr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]

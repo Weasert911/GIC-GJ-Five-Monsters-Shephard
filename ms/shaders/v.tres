@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://xbhc3ecs0d5d"]
+
+[ext_resource type="Shader" uid="uid://toucg3tjacxa" path="res://shaders/viggnete.gdshader" id="1_d5xn1"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_d5xn1")
+shader_parameter/strength = 0.350000016625

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://io7u7th2nyd2"]
+
+[ext_resource type="Shader" uid="uid://dxrpg4xcfe2rf" path="res://shaders/horn color.gdshader" id="1_p1uep"]
+[ext_resource type="Texture2D" uid="uid://dses60vbyanjc" path="res://assets/horn/red.pmg.png" id="2_y6s8u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4sxj"]
+shader = ExtResource("1_p1uep")
+shader_parameter/tint_color = Color(0.82568353, 0.0005363691, 0.82567793, 1)
+shader_parameter/saturation = 0.0
+shader_parameter/brightness = 1.0
+
+[node name="Sprite2D" type="Sprite2D"]
+material = SubResource("ShaderMaterial_c4sxj")
+texture = ExtResource("2_y6s8u")
